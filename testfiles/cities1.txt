@@ -1,0 +1,3 @@
+City1 City2 10
+City2 City3 20
+City3 City4 30
