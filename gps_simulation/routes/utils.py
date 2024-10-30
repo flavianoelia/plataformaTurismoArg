@@ -10,7 +10,26 @@ def dijkstra(start_city):
     """
     distances = {start_city:0} # Distancia desde start_city a sí minma es 0
     previous_cities = {start_city:None}# No tiene ciudad anterior
-    # completar
+    priority_queue = [(0, start_city)]# completado
+    while priority_queue:
+        current_distance, current_city = heapq.heappop(priority_queue)
+
+        # Si encontramos una distancia mayor ya registrada, la ignoramos.
+        if current_distance > distances.get(current_city, float('inf')):
+            continue
+
+        # Recorremos todas las rutas salientes desde la ciudad actual.
+        for route in current_city.routes.all():
+            neighbor = route.destination
+            distance = current_distance + route.distance
+
+            # Si encontramos un camino más corto hacia la ciudad vecina, lo actualizamos.
+            if distance < distances.get(neighbor, float('inf')):
+                distances[neighbor] = distance
+                previous_cities[neighbor] = current_city
+                heapq.heappush(priority_queue, (distance, neighbor))
+
+
     return distances, previous_cities # Devuelve distancias y las ciudades anteriores.
 
 def get_shortest_path(start_city, end_city):
@@ -24,7 +43,7 @@ def get_shortest_path(start_city, end_city):
     city = end_city  # Comienza desde la ciudad destino.
 
 #Reconstruir el camino desde el final al inicio
-    while previous_cities[city]:
+    while previous_cities[city] is not None: # agregue el is not None
         path.insert(0, city)# Inserta la ciudad al inicio de la lista
         city = previous_cities[city]
     path.insert(0, city)# Agrega la ciudad inicial
