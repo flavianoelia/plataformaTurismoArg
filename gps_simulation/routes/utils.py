@@ -2,35 +2,28 @@ import heapq  # Importa heapq para gestionar la cola de prioridad.
 from .models import City, Route  # Importa modelos relacionados con ciudades y rutas.
 
 def dijkstra(start_city):
-    """
-    Calcula las distancias más cortas desde la ciudad inicial (start_city)a todas las demás ciudades.
-     Retorna dos diccionarios:
-     - 'distances': contiene las distancias mínimas desde la ciudad de inicio.
-     - 'previous_cities': guarda la ciudad anterior para reconstruir la ruta más corta.
-    """
-    distances = {start_city:0} # Distancia desde start_city a sí minma es 0
-    previous_cities = {start_city:None}# No tiene ciudad anterior
-    priority_queue = [(0, start_city)]# completado
+    distances = {start_city: 0}  # Distancia inicial
+    previous_cities = {start_city: None}  # No tiene ciudad anterior
+    priority_queue = [(0, start_city)]
+
     while priority_queue:
         current_distance, current_city = heapq.heappop(priority_queue)
 
-        # Si encontramos una distancia mayor ya registrada, la ignoramos.
         if current_distance > distances.get(current_city, float('inf')):
             continue
 
-        # Recorremos todas las rutas salientes desde la ciudad actual.
-        for route in current_city.routes.all():
-            neighbor = route.destination
+        # Recorre las rutas desde y hacia la ciudad actual (para un grafo no dirigido)
+        for route in list(current_city.route_start.all()) + list(current_city.route_end.all()):
+            # Verifica si la ciudad destino es el inicio o el fin de la ruta
+            neighbor = route.end_city if route.start_city == current_city else route.start_city
             distance = current_distance + route.distance
 
-            # Si encontramos un camino más corto hacia la ciudad vecina, lo actualizamos.
             if distance < distances.get(neighbor, float('inf')):
                 distances[neighbor] = distance
                 previous_cities[neighbor] = current_city
                 heapq.heappush(priority_queue, (distance, neighbor))
 
-
-    return distances, previous_cities # Devuelve distancias y las ciudades anteriores.
+    return distances, previous_cities
 
 def get_shortest_path(start_city, end_city):
     """
