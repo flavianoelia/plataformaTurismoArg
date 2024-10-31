@@ -287,11 +287,11 @@ class NodoArbol:
         self.factorEquilibrio = 0 # Factor de equilibrio (usado en árboles balanceados como AVL)
 
     def tieneHijoIzquierdo(self):
-        """Devuelve True si el nodo tiene un hijo izquierdo."""
+        """Devuelve un hijo izquierdo."""
         return self.hijoIzquierdo
 
     def tieneHijoDerecho(self):
-        """Devuelve True si el nodo tiene un hijo derecho."""
+        """Devuelve un hijo derecho."""
         return self.hijoDerecho
 
     def esHijoIzquierdo(self):
