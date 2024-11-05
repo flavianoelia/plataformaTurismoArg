@@ -30,4 +30,5 @@ Daniel: Testing
 10/11
 Flavia: Análisis de la complejidad del Algoritmo
 Daniel: Análisis de la complejidad del Algoritmo
+11/11
 
