@@ -3,8 +3,9 @@ Estado de progreso del proyecto
 ¿Qué anda? 
  Añadí los  campos en el modelo de ciudades y los mostramos en el template.
 Cargué las ciudades y rutas desde el admin, familiarizándonos con la carga rápida que ofrece. Carga bidireccional de rutas (de ciudad1 a ciudad2 y viceversa).
-Implementación de Árboles Binarios de Búsqueda: se comenté los métodos explicando su uso y líneas de código también.
+Implementación de Árboles Binarios de Búsqueda: comenté los métodos explicando su uso y líneas de código también.
 Algoritmo de Dijkstra: Implementamos desde cero para encontrar rutas óptimas y agregamos algunos comentamos en esa parte del código.
+Daniel se ocupó de las decisiones de diseño
 
 ¿Qué no anda?
 
@@ -23,7 +24,8 @@ Flavia: recabar los datos e imágenes de las ciudades y colocarlas.
 Daniel:
 08/11
 Flavia: seguir trabajando en el informe. Acá tengo una duda profe, el informe lo subimos al aula virtual como un documento compartido, un PDF o al repositorio como un archivo Markdown?
-Daniel:
+Daniel:terminar de comentar el código del algoritmo Dijkstra
+
 09/11
 Flavia: Testing
 Daniel: Testing
