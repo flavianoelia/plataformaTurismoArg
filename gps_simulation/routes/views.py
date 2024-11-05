@@ -97,8 +97,14 @@ def city_detail(request, id):
     rutas_salida = Route.objects.filter(start_city=ciudad)
     rutas_llegada = Route.objects.filter(end_city=ciudad)
 
+    # Extraer los lugares turísticos si la ciudad tiene ese atributo
+    '''lugares_turisticos = ciudad.lugares_turisticos.all() if hasattr(ciudad, 'lugares_turisticos') else []
+'''
     return render(request, 'routes/city_detail.html', {
         'ciudad': ciudad,
         'rutas_salida': rutas_salida,
-        'rutas_llegada': rutas_llegada
+        'rutas_llegada': rutas_llegada,
+        
+        #'lugares_turisticos': lugares_turisticos,
     })
+
