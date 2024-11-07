@@ -1,6 +1,6 @@
 
-from django.contrib import admin
-from django.urls import path
+from django.contrib import admin #
+from django.urls import path #
 from . import views
 from django.conf import settings  #
 from django.conf.urls.static import static  # 
@@ -15,4 +15,4 @@ urlpatterns = [
 ]
 # Agregue esta línea para servir archivos media en modo desarrollo
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

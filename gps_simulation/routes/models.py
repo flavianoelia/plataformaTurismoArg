@@ -5,11 +5,8 @@ class City(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(null=True)
     image = models.ImageField(
-        upload_to="../gps_simulation/media/city_images", null=True, blank=True
+        upload_to="city_images", null=True, blank=True
     )
-
-    def __str__(self):
-        return self.name
 
     """
 class TouristPlace(models.Model):# Nueva clase
