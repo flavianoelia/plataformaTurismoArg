@@ -86,8 +86,6 @@ def load_graph(request):
 
     return render(request, 'routes/load_graph.html')
 
-from django.shortcuts import render, get_object_or_404
-from .models import City, Route
 
 def city_detail(request, id):
     # Obtener la ciudad por ID o mostrar 404 si no existe
