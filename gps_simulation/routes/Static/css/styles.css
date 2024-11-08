@@ -39,3 +39,10 @@ body {
     margin-top: 10px;
 }
 
+/* CSS para la clase logo-clase */
+.logo-clase {
+    width: 100px;  /* Tamaño del logo */
+    height: auto;  /* Mantener la proporción */
+    display: block; /* Asegurarse de que no se quede en línea con el texto */
+    margin: 0 auto; /* Centrarlo en su contenedor */
+}
