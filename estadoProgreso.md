@@ -1,36 +1,47 @@
-Estado de progreso del proyecto
+# Estado de progreso del proyecto
 
-¿Qué anda? 
- Añadí los  campos en el modelo de ciudades y los mostramos en el template.
-Cargué las ciudades y rutas desde el admin, familiarizándonos con la carga rápida que ofrece. Carga bidireccional de rutas (de ciudad1 a ciudad2 y viceversa).
-Implementación de Árboles Binarios de Búsqueda: comenté los métodos explicando su uso y líneas de código también.
-Algoritmo de Dijkstra: Implementamos desde cero para encontrar rutas óptimas y agregamos algunos comentamos en esa parte del código.
-Daniel se ocupó de las decisiones de diseño
+## ¿Qué anda? 
+Daniel y Flavia:
+- Añadimos los  campos en el modelo de ciudades y los mostramos en el template.
+- Implementamos desde cero para encontrar rutas óptimas y agregamos algunos comentamos en esa parte del código.
 
-¿Qué no anda?
+Flavia:
+- Cargó las ciudades y rutas desde el admin, familiarizándonos con la carga rápida que ofrece. Carga bidireccional de rutas (de ciudad1 a ciudad2 y viceversa).
+- Comentó los métodos explicando su uso y líneas de código también.
 
-No se logró aún poner imágenes a las ciudades, estoy investigando sobre una especie de archivo favicon.ico como para ir averiguando de donde viene el problema.
-Intente agregar una clase que muestre lugares turísticos de las localidades ya cargadas, pero tuve que dar marcha atrás porque no funcionaba lo que antes si funcionaba asi que tuve que ir como recogiendo más miguitas de rastros que deje en varios archivos para ver si podía recuperar lo que ya estaba funcionando. Deje ese código “comentado”, es decir,  lo agregado como para ver si más adelante, una vez terminado el proyecto con lo requerido, ahí sí, ver si hay tiempo para implementar esa idea. 
-
- ¿Qué falta implementar?
-
-Me falta buscar la información pertinente para poner en la descripción de los lugares (ciudades) y sus respectivas fotos.
-Falta todo lo relativo a testing, o sea reunir y presentar los casos de prueba utilizados, cuáles métodos seran testeados, los resultados de los test y el manejo de errores.
-Decisiones de diseño y análisis de complejidad del algoritmo de Dijkstra.
-
-Planificación de lo que falta:
-07/11
-Flavia: recabar los datos e imágenes de las ciudades y colocarlas.
 Daniel:
-08/11
-Flavia: seguir trabajando en el informe. Acá tengo una duda profe, el informe lo subimos al aula virtual como un documento compartido, un PDF o al repositorio como un archivo Markdown?
-Daniel:terminar de comentar el código del algoritmo Dijkstra
+- Tomó las decisiones de diseño en los campos de los modelos
 
-09/11
-Flavia: Testing
-Daniel: Testing
+
+## ¿Qué no anda?
+- No se logró aún poner imágenes a las ciudades, estamos investigando sobre una especie de archivo favicon.ico como para ir averiguando de donde viene el problema.
+Flavia intentó agregar una clase que muestra lugares turísticos de las localidades ya cargadas, se dió marcha atrás porque no funcionaba lo que antes si funcionaba
+
+- Dejamos ese código “comentado”, es decir,  lo agregado como para ver si más adelante, una vez terminado el proyecto con lo requerido, ahí sí, ver si hay tiempo para implementar esa idea. 
+
+## ¿Qué falta implementar?
+
+- Falta buscar la información pertinente para poner en la descripción de los lugares (ciudades) y sus respectivas fotos.
+- Falta lo relativo a testing, o sea reunir y presentar los casos de prueba utilizados, cuáles métodos seran testeados, los resultados de los test y el manejo de errores.
+- Análisis de complejidad del algoritmo de Dijkstra.
+
+## Planificación de lo que falta:
+07/11
+Flavia: 
+- Añadir los registros que faltan de las ciudades: descripción, población etc.
+Daniel:
+- Investigar como colocar correctamente las imagenes en Django
+Objetivo general: Terminar el proyecto como lo tenemos pensado, con las diferentes caráctieristicas de las ciudades implementadas y código comentado
+
+08/11
+Flavia: Seguir trabajando en el informe.
+Daniel:Terminar de comentar el código del algoritmo Dijkstra
+El objetivo general es dar en cuenta como se desarrollaron las funcionalidades del proyecto
+
+09/11:
+Flavia y Daniel: Investigar como hacer los test en el código para analizar algoritmo de Dikstra
+El objetivo es testear puntualmente el algoritmo Dijkstra
+
 10/11
-Flavia: Análisis de la complejidad del Algoritmo
-Daniel: Análisis de la complejidad del Algoritmo
-11/11
+Flavia y Daniel: Análisis de la complejidad del Algoritmo y revisión de proyecto para entrega final
 
