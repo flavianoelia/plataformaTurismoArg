@@ -6,8 +6,6 @@ class City(models.Model):
     description = models.TextField(null=True)
     image = models.ImageField(upload_to="city_images", null=True, blank=True)
     poblacion = models.TextField(null=True)
-    image = models.ImageField(
-        upload_to="city_images", null=True, blank=True)
 
     """
 class TouristPlace(models.Model):# Nueva clase
@@ -28,6 +26,15 @@ class Route(models.Model):
         City, related_name="route_end", on_delete=models.CASCADE
     )
     distance = models.FloatField()
+
+    def save (self, *args, **kwargs): #para hacer automáticamente la ruta inversa
+        super().save(*args, **kwargs) #llama al método save() original para guardar la ruta
+
+        #Verifica si la ruta inversa ya existe si no la creamos
+        if not Route.objects.filter( start_city=self.end_city, end_city=self.start_city).exists():
+            #Crea la ruta inversa automáticamente con la misma distancia
+            Route.objects.create(start_city=self.end_city, end_city=self.start_city, distance=self.distance)
+
 
     def __str__(self):
         return f"{self.start_city} -> {self.end_city} ({self.distance} km)"
