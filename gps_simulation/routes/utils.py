@@ -25,6 +25,7 @@ def dijkstra(start_city):
 
     return distances, previous_cities
 
+
 def get_shortest_path(start_city, end_city):
     """
     Devuelve el camino más corto entre dos ciudades usando el algoritmo de Dijkstra.
