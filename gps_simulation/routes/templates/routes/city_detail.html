@@ -1,3 +1,4 @@
+
 {% extends 'routes/base.html' %}
 
 {% block title %}{{ ciudad.name }}{% endblock %}
@@ -11,10 +12,10 @@
         <!-- Descripción de la Ciudad -->
         <p class="lead">Descripción: {{ ciudad.description }}</p>
         <p class="city-population">Población: {{ ciudad.poblacion }}</p>
-        <!-- Lugares Turísticos
+        <!-- Lugares Turísticos -->
         <h3 class="mt-5">Lugares Turísticos en {{ ciudad.name }}:</h3>
         <ul class="list-group mb-3">
-            {% for lugar in ciudad.lugares_turisticos %}
+            {% for lugar in lugares_turisticos %}
                 <li class="list-group-item">{{ lugar }}</li>
             {% empty %}
                 <li class="list-group-item">No hay lugares turísticos registrados.</li>

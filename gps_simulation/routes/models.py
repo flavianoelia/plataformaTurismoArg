@@ -7,12 +7,12 @@ class City(models.Model):
     image = models.ImageField(upload_to="city_images", null=True, blank=True)
     poblacion = models.TextField(null=True)
 
-    """
+    
 class TouristPlace(models.Model):# Nueva clase
     city = models.ForeignKey(City, related_name='lugares_turisticos', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
-"""
+    image = models.ImageField(upload_to="tourist_place_images", null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lugares Turísticos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Lugares Turísticos en Córdoba</h1>
+    <div class="container">
+        <div class="row">
+            {% for lugar in lugares %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{ lugar.image.url }}" class="card-img-top" alt="{{ lugar.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ lugar.name }}</h5>
+                        <p class="card-text">{{ lugar.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
