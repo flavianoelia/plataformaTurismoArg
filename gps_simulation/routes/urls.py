@@ -12,7 +12,10 @@ urlpatterns = [
     path('load/', views.load_graph, name='load_graph'),
     path('shortest-route/', views.shortest_route, name='shortest_route'),
     path('city/<int:id>/', views.city_detail, name='city_detail'),
+    path('tourist-places/', views.tourist_places, name='tourist_places'),
+    path('contact/', views.contact, name='contact'),
 ]
 # Agregue esta línea para servir archivos media en modo desarrollo
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 import networkx as nx
-from .models import City, Route
+from .models import City, Route, TouristPlace
 from .utils import get_shortest_path, ArbolBinarioBusqueda
 
 # routes/views.py
@@ -95,14 +95,19 @@ def city_detail(request, id):
     rutas_salida = Route.objects.filter(start_city=ciudad)
     rutas_llegada = Route.objects.filter(end_city=ciudad)
 
-    # Extraer los lugares turísticos si la ciudad tiene ese atributo
-    '''lugares_turisticos = ciudad.lugares_turisticos.all() if hasattr(ciudad, 'lugares_turisticos') else []
-'''
+    # Extraer los lugares turísticos
+    lugares_turisticos = ciudad.lugares_turisticos.all() if hasattr(ciudad, 'lugares_turisticos') else []
+
     return render(request, 'routes/city_detail.html', {
         'ciudad': ciudad,
         'rutas_salida': rutas_salida,
         'rutas_llegada': rutas_llegada,
-        
-        #'lugares_turisticos': lugares_turisticos,
+        'lugares_turisticos': lugares_turisticos,
     })
 
+def tourist_places(request):
+    lugares = TouristPlace.objects.all()
+    return render(request, 'routes/tourist_places.html', {'lugares': lugares})
+
+def contact(request):
+    return render(request, 'routes/contact.html')
