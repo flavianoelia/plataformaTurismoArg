@@ -1,14 +1,17 @@
 import heapq  # Importa heapq para gestionar la cola de prioridad.
 from .models import City, Route  # Importa modelos relacionados con ciudades y rutas.
 
-def dijkstra(start_city):
-    distances = {start_city: 0}  # Distancia inicial
-    previous_cities = {start_city: None}  # No tiene ciudad anterior
-    priority_queue = [(0, start_city)]
-
+def dijkstra(start_city): #se le pasa una ciudad por parametro
+    distances = {start_city: 0}  # diccionario que guarda las distancias y el nombre de la ciudad
+    previous_cities = {start_city: None}  # Guarda las ciudades por las que se pasó para llegar
+    priority_queue = [(0, start_city)] #cola de prioridad para recorrer el grafo
+ 
+ # mientras haya nodos para recorrer en el grafo:
     while priority_queue:
-        current_distance, current_city = heapq.heappop(priority_queue)
+        #extrae la menor distancia y la ciudad 
+        current_distance, current_city = heapq.heappop(priority_queue) 
 
+        #si la distancia actual es mayor a la d
         if current_distance > distances.get(current_city, float('inf')):
             continue
 
@@ -18,10 +21,11 @@ def dijkstra(start_city):
             neighbor = route.end_city if route.start_city == current_city else route.start_city
             distance = current_distance + route.distance
 
+        #verifica si la nueva distancia es menor a la ya registrada para ese vecino
             if distance < distances.get(neighbor, float('inf')):
-                distances[neighbor] = distance
-                previous_cities[neighbor] = current_city
-                heapq.heappush(priority_queue, (distance, neighbor))
+                distances[neighbor] = distance #si es menor, la asigna como la nueva distancia
+                previous_cities[neighbor] = current_city #actualiza la ciudad del vecino a la actual
+                heapq.heappush(priority_queue, (distance, neighbor)) #agrega la distancia y el vecino a la cola de prioridad
 
     return distances, previous_cities
 
