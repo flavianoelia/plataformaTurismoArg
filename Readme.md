@@ -33,12 +33,12 @@ referencias:
 (V) es el número de vertices (ciudades)
 (E) es el número de aristas (rutas)
 
-## Qué anda y qué no
+## Qué anda y qué no?
 ### Anda:
 - Algoritmo de Dijkstra
-- Modelo de ciudades en el fronted
+- Modelo de ciudades en el frontend
 - Imagenes en la base de datos, como propiedad de las ciudades
 - Test unitarios
 
 ## Qué se puede mejorar?
-Se podría mejorar añadiendo una página de bienvenida para el usuario, inidicando de qué se trata la página y las secciones que tiene. También se podría estilizar más la página cambiando los colores, añadiendo animaciones y transiciones para que sea mas agradable para el usuario
+Se podría mejorar añadiendo una página de bienvenida para el usuario, inidicando de qué se trata la página y las secciones que tiene. También se podría estilizar más la página cambiando los colores, añadiendo animaciones y transiciones para que sea más agradable para el usuario, si bien no era parte de la consigna de trabajo, nos quedamos con muchas ganas de seguir trabajando en ella.
