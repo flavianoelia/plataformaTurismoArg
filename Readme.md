@@ -1,28 +1,27 @@
 ## Descripción del proyecto
-En el presente trabajo se Desarrollar una plataforma de turismo nacional utilizando Django y aplicando los conceptos estudiados en la materia Programación 2: programación orientada a objetos, estructura de datos, árboles binarios, grafos y complejidad de algoritmos. Documentamos todas las fases del proyecto desde su concepción hasta la implementación final.
+En el presente trabajo se Desarrolla una plataforma de turismo nacional utilizando Django y aplicando los conceptos estudiados en la materia Programación 2: programación orientada a objetos, estructura de datos, árboles binarios, grafos y complejidad de algoritmos. Documentamos todas las fases del proyecto desde su concepción hasta la implementación final.
 Objetivo general: Desarrollar una plataforma de turismo nacional que permita gestionar ciudades y rutas, ofreciendo rutas óptimas entre destinos.
 Objetivos específicos:
 Cargar ciudades con información turística relevante.
 Implementar el algoritmo de Dijkstra para encontrar la ruta más corta entre ciudades.
 Utilizar Árboles Binarios de Búsqueda (BST) para ordenar las ciudades antes de mostrar los datos en el frontend.
 
-## Qué se hizo
+## ¿Qué se hizo?
 Modelado y Estructura del Proyecto
 Modelos: Describimos el modelo City y cómo se representa la información de cada ciudad.
-El modelo consta de 3 atributos: nombre, descripción, población e imagen.
-Árboles Binarios: Explicamos la implementación del Árbol Binario de Búsqueda (BST) y su utilidad en la organización de las ciudades a traves de los comentarios en el código.
+El modelo consta de 4 atributos: nombre, descripción, población e imagen.
+Árboles Binarios: Explicamos la implementación del Árbol Binario de Búsqueda (BST) y su utilidad en la organización de las ciudades a través de los comentarios en el código.
 Algoritmo de Dijkstra: Implementamos el algoritmo, cómo se calcula la ruta más corta y los resultados esperados con los comentarios en el código.
 Frontend: Descripción de las modificaciones en los templates HTML proporcionados. 
-Se modificó el archivo city_detail con los campos de las ciudades faltantes. Se creo la carpeta media en donde se ubican las imágenes de las ciudades, se agrego el archivo css y se indago sobre el manejo de los archivos static en Django, y además pusimos un logo representativo de la página el cual debió ser adaptado para aparecer en la pestaña de la página y en una dimensión más grande en cada una de las demás páginas. Todo esto teniendo en cuenta las modificaciones pertinentes para tratar archivos estáticos.
+Se modificó el archivo city_detail con los campos de las ciudades faltantes. Se creo la carpeta media en donde se ubican las imágenes de las ciudades, se agrego el archivo css y se indago sobre el manejo de los archivos static en Django. Además pusimos un logo representativo de la página (con todo lo que la cuidad de Códoba tiene) el cual debió ser adaptado para aparecer en la pestaña de la página y en una dimensión más grande en cada una de las demás páginas. Todo esto teniendo en cuenta las modificaciones pertinentes para tratar archivos estáticos.
 Añadimos los campos en el modelo cuidades y lo mostramos en el template. A través del Admin de Django cargamos las ciudades y las rutas.
 
 Rutas de navegación: mostraremos un resumen de las URL configuradas.
 Carga bidireccional de rutas (de ciudad1 a ciudad2 y viceversa).
-Carga de imágenes de las ciudades y las mostramos en el detalle de cada ciudad.
-Carga de fotos de las ciudades: implementamos el manejo de los archivos estáticos.
+Carga de imágenes de las ciudades y las mostramos en el detalle de cada ciudad. Implementamos el manejo de los archivos estáticos. Creamos la clase lugares turíticos para cada ciudad, agregando imanen y descripción a la de la ciudad de Córdoba.
 Implementación de Árboles Binarios de Búsqueda: Comentamos los métodos explicando su uso.
 Algoritmo de Dijkstra: Implementamos desde cero para encontrar rutas óptimas. y comentamos el código.
-Testing: implementamos tests para el método Dijkstra, las pruebas fueron satisfactorias.
+Testing: implementamos tests para el método Dijkstra. Especialmente testeamos que el algoritmo elija la ruta más corta sin pasar por Córdoba si hay una ruta directa, porque con los datos que en un principio había cargado, no obtenia el resultado esperado, luego de cargar rutas especificas y esperables los resultados de las pruebas fueron satisfactorias.
  Manejo de errores: no nos aparecia la base de datos por lo que debimos buscar una extensión específica ya que no andaba la actual, también compartimos la base de datos individualmente para mantener la sincronización en el equipo, se resolvieron pequeños inconvenientes ligados a las políticas de privacidad para activar el entorno virtual pasando el siguiente comando: Set-ExecutionPolicy RemoteSigned - Scope Process.
 
 ## Análisis de complejidad del algoritmo de Dijkstra
