@@ -85,15 +85,15 @@ Se podría mejorar añadiendo una página de bienvenida para el usuario, inidica
 
 ## Reproducción del entorno
 
-
 Asegúrate de que la librería Pillow esté incluida en `requirements.txt`:
 
-```plaintext
+plaintext
 asgiref==3.8.1
 Django==5.1.1
 networkx==3.3
 sqlparse==0.5.1
 Pillow
+
 
 ### Agradecimientos
 
