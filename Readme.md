@@ -1,3 +1,5 @@
+# Plataforma de turismo Argentina
+
 ## Descripción del proyecto
 En el presente trabajo se Desarrolla una plataforma de turismo nacional utilizando Django y aplicando los conceptos estudiados en la materia Programación 2: programación orientada a objetos, estructura de datos, árboles binarios, grafos y complejidad de algoritmos. Documentamos todas las fases del proyecto desde su concepción hasta la implementación final.
 Objetivo general: Desarrollar una plataforma de turismo nacional que permita gestionar ciudades y rutas, ofreciendo rutas óptimas entre destinos.
@@ -41,3 +43,58 @@ referencias:
 
 ## Qué se puede mejorar?
 Se podría mejorar añadiendo una página de bienvenida para el usuario, inidicando de qué se trata la página y las secciones que tiene. También se podría estilizar más la página cambiando los colores, añadiendo animaciones y transiciones para que sea más agradable para el usuario, si bien no era parte de la consigna de trabajo, nos quedamos con muchas ganas de seguir trabajando en ella.
+
+## Instrucciones de instalación
+
+1. Clonar el repositorio:
+    ```bash
+    git clone https://github.com/flavianoelia/plataformaTurismoArg.git
+    cd plataformaTurismoArg
+    ```
+
+2. Crear y activar un entorno virtual:
+    ```bash
+    python -m venv env
+    source env/bin/activate  # En Windows: env\Scripts\activate
+    ```
+
+3. Instalar las dependencias:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Realizar las migraciones de la base de datos:
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+5. Crear un superusuario para acceder al administrador de Django:
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+6. Ejecutar el servidor de desarrollo:
+    ```bash
+    python manage.py runserver
+    ```
+
+7. Acceder al administrador de Django:
+    - Abre tu navegador y ve a `http://127.0.0.1:8000/admin`
+    - Inicia sesión con las credenciales del superusuario que creaste.
+
+## Reproducción del entorno
+
+
+Asegúrate de que la librería Pillow esté incluida en `requirements.txt`:
+
+```plaintext
+asgiref==3.8.1
+Django==5.1.1
+networkx==3.3
+sqlparse==0.5.1
+Pillow
+
+### Agradecimientos
+
+Quiero aprovechar este lugar, el mejor lugar, para expresar mi enorme agradecimiento a mi profesor Matías Eduardo Bordone, por todo lo que me ha enseñado y sobre todo por su forma de ser tan generosa de brindarlo todo, darnos más de lo que debía, por su gran vocación en la docencia. También quiero agradecerle a nuestro ayudante alumno Nicolás Dahlquist por su ayuda y predispoción no solo en este proyecto sino durante todo el año lectivo. Y a mi nuevo compañero de equipo Daniel LLanes, quien me ha hecho volver a creer en que sí se puede encontrar un buen equipo de trabajo.
