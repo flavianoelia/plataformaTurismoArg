@@ -8,8 +8,8 @@ class City(models.Model):
     description = models.TextField(null=True)
     # Campo que almacena una imagen opcional de la ciudad. Las imágenes se subirán a la carpeta "city_images".
     image = models.ImageField(upload_to="city_images", null=True, blank=True)
-    # Campo que almacena la población de la ciudad como texto, siendo opcional.
-    poblacion = models.TextField(null=True)
+    # Campo que almacena la población de la ciudad como número entero positivo, siendo opcional.
+    poblacion = models.PositiveIntegerField(null=True)
 
     # Método mágico que define cómo se representa una instancia del modelo como texto. Devuelve el nombre de la ciudad.
     def __str__(self):
